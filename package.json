@@ -1,0 +1,11 @@
+{
+  "name": "itIncubator_sprint1",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/ricoysir/itIncubator_sprint1",
+  "author": "RicoygLex <ricoyserglex@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}
