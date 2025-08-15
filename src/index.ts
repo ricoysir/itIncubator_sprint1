@@ -8,6 +8,7 @@ const port = process.env.PORT || 3000;
 const addresses = [{ id: 1, value: 'Pushkina 1' }, { id: 2, value: 'Fillimonova 2' }]
 const products = [{ id: 1, title: 'tomato' }, { id: 2, title: 'apple' }]
 
+//products -------------------
 app.get('/products', (req: Request, res: Response) => {
     if (req.query.title) {
         let searchString = req.query.title?.toString();
@@ -26,6 +27,21 @@ app.get('/products/:id', (req: Request, res: Response) => {
     res.send(product)
 })
 
+app.delete('/products/:id', (req: Request, res: Response) => {
+    let searchedId = +req.params.id;
+    for (let i = 0; i < products.length; i++,)
+    {
+        if (products[i].id === searchedId)
+        {
+            products.splice(i, 1);
+            res.sendStatus(204);
+            return;
+        }
+    }
+    res.sendStatus(404);
+})
+
+//addresses ------------------------------
 app.get('/addresses', (req: Request, res: Response) => {
     res.send(addresses)
 })
