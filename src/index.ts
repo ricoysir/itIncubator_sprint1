@@ -38,7 +38,6 @@ app.post('/products', (req: Request, res: Response) => {
     }
 })
 
-
 app.get('/products/:id', (req: Request, res: Response) => {
     let searchedId = +req.params.id;
     let product = products.find(p => p.id === searchedId);
@@ -46,6 +45,19 @@ app.get('/products/:id', (req: Request, res: Response) => {
         res.sendStatus(404);
     }
     res.send(product)
+})
+
+app.put('/products/:id', (req: Request, res: Response) => {
+    let searchedId = +req.params.id;
+    let product = products.find(p => p.id === searchedId);
+    if(product) {
+        product.title = req.body.title;
+        res.sendStatus(200).send(product)
+    }
+    else {
+        res.sendStatus(404);
+    }
+
 })
 
 app.delete('/products/:id', (req: Request, res: Response) => {

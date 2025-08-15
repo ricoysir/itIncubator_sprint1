@@ -37,6 +37,17 @@ app.get('/products/:id', (req, res) => {
     }
     res.send(product);
 });
+app.put('/products/:id', (req, res) => {
+    let searchedId = +req.params.id;
+    let product = products.find(p => p.id === searchedId);
+    if (product) {
+        product.title = req.body.title;
+        res.sendStatus(200).send(product);
+    }
+    else {
+        res.sendStatus(404);
+    }
+});
 app.delete('/products/:id', (req, res) => {
     let searchedId = +req.params.id;
     for (let i = 0; i < products.length; i++, ) {
