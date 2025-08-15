@@ -4,13 +4,14 @@
   "main": "index.js",
   "repository": "https://github.com/ricoysir/itIncubator_sprint1",
   "author": "RicoygLex <ricoyserglex@gmail.com>",
-  "type": "module", 
+  "type": "module",
   "scripts": {
     "watch": "tsc -w",
     "dev": "nodemon --inspect dist/index.js"
   },
   "license": "MIT",
   "dependencies": {
+    "body-parser": "^2.2.0",
     "express": "^5.1.0"
   },
   "devDependencies": {
