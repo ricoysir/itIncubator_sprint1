@@ -7,6 +7,7 @@ export default {
   preset: "ts-jest",
   testEnvironment: "node",
   transform: {
-    ...tsJestTransformCfg,
+    '^.+\\.tsx?$': 'ts-jest',
   },
+  moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node']
 };
