@@ -1,7 +1,7 @@
 import express from 'express';
 import { productRouter } from './routes/products.js';
 import { addressesRouter } from './routes/addresses.js';
-const app = express();
+export const app = express();
 const port = process.env.PORT || 3000;
 app.use(express.json()); // заменяет bodyParser.json()
 app.use(express.urlencoded({ extended: true })); // заменяет bodyParser.urlencoded()

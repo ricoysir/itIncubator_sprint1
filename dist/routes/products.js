@@ -6,7 +6,7 @@ productRouter.get('/', (req, res) => {
         let searchString = req.query.title?.toString();
         res.send(products.filter(p => p.title.indexOf(searchString) > -1));
     }
-    res.send(products);
+    res.sendStatus(200).send(products);
 });
 productRouter.post('/', (req, res) => {
     const newProduct = {

@@ -3,7 +3,7 @@ import type { Request, Response } from 'express';
 import { productRouter } from './routes/products.js';
 import { addressesRouter } from './routes/addresses.js';
 
-const app = express();
+export const app = express();
 
 const port = process.env.PORT || 3000;
 
